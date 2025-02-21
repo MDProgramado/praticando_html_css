@@ -28,7 +28,7 @@ footer {
   height: 50px; 
   background-color: #1D36C3;
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: space-between;
   padding: 0 20px; 
 }
