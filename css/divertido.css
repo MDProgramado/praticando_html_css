@@ -1,0 +1,41 @@
+body {
+    background-color:#35DFF2; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  img {
+    width: 80px; 
+    height: auto; 
+    cursor: pointer;
+    padding: 20px;
+  }
+  
+  .text-container {
+    border-color: black;
+    color: #3D2859;
+    text-align: center;
+  }
+  
+  strong {
+    color: #F2AC29;
+  }
+  
+  footer {
+    color: rgb(235, 229, 229);
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 50px; 
+    background-color: #F2C12E;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; 
+  }
+  
+  .footer-container {
+    display: flex; 
+    justify-content: space-around;
+    width: 100%; 
+  }
