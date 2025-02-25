@@ -5,6 +5,14 @@
   border: 0;
   padding: 0;
 }
+
+body {
+  box-sizing: border-box;
+  background-color: #A7A8AA; 
+  height: 100vh;
+  
+}
+
 header {
   box-sizing: border-box;
   height: 150px;
@@ -14,13 +22,7 @@ header {
   box-shadow:#2D2D2D 2px 0 10px;
 }
 
-#img-header {
-  box-sizing: border-box;
-  position: relative;
-  display: flex;
-  align-items: self-start;
 
-}
 #img-header img {
   box-sizing: border-box;
   width: 150px;
@@ -28,12 +30,7 @@ header {
   
 }
 
-body {
-  box-sizing: border-box;
-  background-color: #A7A8AA; 
-  height: 100vh;
-  
-}
+
 .apresentação__conteudo{
   width: 615px; 
 }
