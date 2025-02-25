@@ -48,6 +48,8 @@ body {
 }
 
 .apresentacao__texto {
+  display: flex;
+  margin: 10%;
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
 }
@@ -69,10 +71,18 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   margin: 10%;
-}
+  }
 
 strong {
   color: #003DA5;
+}
+strong :hover {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+  transition-duration: 0.3 s;
+  padding: 5px;
+
 }
 
 p {
@@ -88,6 +98,15 @@ span{
   color: #003DA5;
   border: 1px solid #003DA5   ;
   padding: 1px;
+
+}
+
+span :hover {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+  transition-duration: 0.3 s;
+  padding: 5px;
 
 }
 
