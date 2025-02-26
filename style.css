@@ -7,13 +7,10 @@
 }
 
 body {
+  box-sizing: border-box;
   background-color: #A7A8AA; 
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 20px; 
-  text-align: center;
-  font-family: "Montserrat", sans-serif; 
+  
 }
 
 header {
