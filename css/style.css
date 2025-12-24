@@ -1,11 +1,11 @@
-/* Reset e imports */
+/* imports */
 @import url('./modules/variables.css');
 @import url('./modules/animation.css');
 @import url('./modules/components.css');
 @import url('./modules/notifications.css');
 @import url('./modules/theme.css');
 
-/* Reset e imports */
+/* Reset */
 * {
     margin: 0;
     padding: 0;

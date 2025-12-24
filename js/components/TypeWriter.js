@@ -22,7 +22,7 @@ export class TypeWriter {
     }
 
     init() {
-        // Add cursor if enabled
+ 
         if (this.options.cursor && !this.element.nextElementSibling?.classList.contains('typing-cursor')) {
             const cursor = document.createElement('span');
             cursor.className = 'typing-cursor';
@@ -30,7 +30,7 @@ export class TypeWriter {
             this.element.parentNode.insertBefore(cursor, this.element.nextSibling);
         }
         
-        // Start typing
+
         this.type();
     }
 
@@ -40,30 +40,29 @@ export class TypeWriter {
         const currentWord = this.words[this.wordIndex];
         
         if (this.isDeleting) {
-            // Deleting text
+       
             this.element.textContent = currentWord.substring(0, this.charIndex - 1);
             this.charIndex--;
         } else {
-            // Typing text
+
             this.element.textContent = currentWord.substring(0, this.charIndex + 1);
             this.charIndex++;
         }
 
-        // Calculate speed with some randomness for natural feel
-        let speed = this.isDeleting ? this.options.deleteSpeed : this.options.typeSpeed;
-        speed += Math.random() * 50 - 25; // Add randomness
 
-        // Handle word completion
+        let speed = this.isDeleting ? this.options.deleteSpeed : this.options.typeSpeed;
+        speed += Math.random() * 50 - 25;
+
         if (!this.isDeleting && this.charIndex === currentWord.length) {
-            // Pause at end of word
+     
             speed = this.options.delayBetweenWords;
             this.isDeleting = true;
         } else if (this.isDeleting && this.charIndex === 0) {
-            // Move to next word
+
             this.isDeleting = false;
             this.wordIndex++;
             
-            // Loop or stop
+   
             if (this.wordIndex === this.words.length) {
                 if (this.options.loop) {
                     this.wordIndex = 0;
@@ -74,7 +73,6 @@ export class TypeWriter {
             }
         }
 
-        // Schedule next action
         this.timeout = setTimeout(() => this.type(), speed);
     }
 
@@ -111,7 +109,6 @@ export class TypeWriter {
 
     destroy() {
         this.stop();
-        // Remove cursor
         const cursor = this.element.nextElementSibling;
         if (cursor?.classList.contains('typing-cursor')) {
             cursor.remove();

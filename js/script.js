@@ -212,7 +212,7 @@ class PortfolioApp {
 
     sendToWhatsApp(name, email, message) {
         const phoneNumber = '5571989211292';
-        const text = `*Nova mensagem do portfólio!*%0A%0A*Nome:* ${name}%0A*Email:* ${email}%0A%0A*Mensagem:*%0A${message}`;
+        const text = `*Nova mensagem do portfólio! ${name} ${email} Mensagem:${message}`;
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
         
         window.open(url, '_blank');
@@ -361,11 +361,10 @@ class PortfolioApp {
     }
 }
 
-// Inicializar quando o DOM estiver pronto
+// Inicializa quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
     const app = new PortfolioApp();
     
-    // Adicionar classe loaded após carregamento
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 100);
@@ -392,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Exportar para uso global (opcional)
+
 if (typeof window !== 'undefined') {
     window.PortfolioApp = PortfolioApp;
 }
