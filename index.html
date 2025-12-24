@@ -3,57 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <title>Maicon Douglas | Portfólio</title>
+    
+    <!-- Tailwind CSS via CDN (para desenvolvimento) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/index.js"></script>
-    <script src="js/menu.js"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#1A202C',
+                        'secondary-light': '#F7FAFC',
+                        'accent-teal': '#4FD1C5',
+                        'accent-coral': '#F6AD55',
+                        'text-main': '#2D3748',
+                        'text-light': '#F7FAFC',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'lato': ['Lato', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body class="bg-secondary-light text-text-main leading-relaxed">
 
-    <header class="bg-primary-dark text-text-light shadow-lg sticky top-0 z-50 ">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold hover:text-accent-teal transition-colors"> Maicon Douglas</a>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#sobre" class="hover:text-accent-teal transition-colors">Sobre</a></li>
-                    <li><a href="#projetos" class="hover:text-accent-teal transition-colors">Projetos</a></li>
-                    <li><a href="#habilidades" class="hover:text-accent-teal transition-colors">Habilidades</a></li>
-                    <li><a href="#contato" class="hover:text-accent-teal transition-colors">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-text-light focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+
+<!-- Header -->
+<header class="bg-primary-dark text-text-light shadow-lg sticky top-0 z-40">
+    <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-xl sm:text-2xl font-bold hover:text-accent-teal transition-colors">
+            Maicon Douglas
+        </a>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+            <ul class="flex space-x-4 sm:space-x-6 items-center">
+                <li><a href="#sobre" class="hover:text-accent-teal transition-colors">Sobre</a></li>
+                <li><a href="#projetos" class="hover:text-accent-teal transition-colors">Projetos</a></li>
+                <li><a href="#habilidades" class="hover:text-accent-teal transition-colors">Habilidades</a></li>
+                <li><a href="#contato" class="hover:text-accent-teal transition-colors">Contato</a></li>
+                <li>
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-accent-teal/20 transition-colors">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center space-x-3">
+            <button id="theme-toggle" class="p-2 text-text-light">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="mobile-menu-button" class="text-text-light focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-primary-dark/95 backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6 py-2">
+            <a href="#sobre" class="block py-3 px-4 hover:bg-accent-teal/20 transition-colors rounded-lg">Sobre</a>
+            <a href="#projetos" class="block py-3 px-4 hover:bg-accent-teal/20 transition-colors rounded-lg">Projetos</a>
+            <a href="#habilidades" class="block py-3 px-4 hover:bg-accent-teal/20 transition-colors rounded-lg">Habilidades</a>
+            <a href="#contato" class="block py-3 px-4 hover:bg-accent-teal/20 transition-colors rounded-lg">Contato</a>
+        </div>
+    </div>
+</header>
+<!-- Hero Section -->
+<section id="hero" class="hero-bg text-text-light min-h-screen flex items-center justify-center text-center p-6 relative overflow-hidden">
+    <div class="particles-container absolute inset-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-dark/60 via-primary-dark/30 to-transparent"></div>
+    
+    <div class="relative z-10 max-w-6xl mx-auto px-4">
+        <div class="mb-8">
+            <div class="inline-block p-3 rounded-full bg-accent-teal/10 mb-6">
+                <i class="fas fa-code text-3xl text-accent-teal"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-accent-teal to-accent-coral bg-clip-text text-transparent">
+                Maicon Douglas
+            </h1>
+            <div class="text-2xl md:text-4xl mb-8 min-h-[48px]">
+                <span class="typed-text font-semibold"></span>
+                <span class="typing-cursor"></span>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-primary-dark/95 backdrop-blur-sm">
-            <a href="#sobre" class="block py-2 px-6 text-sm hover:bg-accent-teal/20 transition-colors">Sobre</a>
-            <a href="#projetos" class="block py-2 px-6 text-sm hover:bg-accent-teal/20 transition-colors">Projetos</a>
-            <a href="#habilidades" class="block py-2 px-6 text-sm hover:bg-accent-teal/20 transition-colors">Habilidades</a>
-            <a href="#contato" class="block py-2 px-6 text-sm hover:bg-accent-teal/20 transition-colors">Contato</a>
-        </div>
-    </header>
-    
-
-    <section id="hero" class="hero-bg text-text-light min-h-screen flex items-center justify-center text-center p-6 relative container-snap">
-        <div class="absolute inset-0 bg-primary-dark/70 backdrop-blur-sm"></div> <div class="relative z-10 fade-in-section">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">Olá, eu sou Maicon Douglas</h1>
-            <p class="text-2xl md:text-3xl mb-8">
-                Eu sou <span class="typed-text text-accent-teal font-semibold"></span><span class="typing-cursor text-accent-teal">|</span>
-            </p>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10">Transformando ideias em experiências digitais memoráveis e impactantes. Apaixonado por programação que resolve problemas e encanta.</p>
-            <a href="#projetos" class="bg-accent-teal hover:bg-opacity-80 text-primary-dark font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg">
-                Veja Meus Projetos <i class="fas fa-arrow-down ml-2"></i>
+        
+        <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
+            Transformo <span class="text-accent-teal font-semibold">ideias complexas</span> em 
+            <span class="text-accent-coral font-semibold"> experiências digitais extraordinárias</span>. 
+            Cada linha de código é escrita com paixão e propósito.
+        </p>
+        
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="#projetos" class="btn-modern group">
+                Explorar Projetos
+                <i class="fas fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+            </a>
+            <a href="#contato" class="btn-modern bg-transparent border-2 border-accent-teal text-accent-teal hover:bg-accent-teal/10">
+                <i class="fas fa-paper-plane mr-2"></i>
+                Vamos Conversar
             </a>
         </div>
-    </section>
+        
+        <div class="mt-20 animate-bounce">
+            <a href="#sobre" class="text-text-light/60 hover:text-accent-teal transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
     <section id="sobre" class="py-16 md:py-24 bg-secondary-light container-snap">
         <div class="container mx-auto px-6 fade-in-on-scroll">
@@ -315,15 +396,25 @@
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-gray-400 text-center py-8">
-        <div class="container mx-auto px-6">
-            <p>&copy; <span id="currentYear"></span> Maicon Douglas. Todos os direitos reservados.</p>
-            <p class="text-sm">Feito com <i class="fas fa-heart text-accent-coral"></i> e Tailwind CSS.</p>
-        </div>
-    </footer>
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+ <footer class="bg-gray-800 text-gray-400 text-center py-8">
+  <div class="container mx-auto px-6">
+    <p>&copy; <span id="currentYear"></span> Maicon Douglas. Todos os direitos reservados.</p>
+    <p class="text-sm">Feito com <i class="fas fa-heart text-accent-coral"></i> e Tailwind CSS.</p>
+    <p><a href="#home" class="text-accent-teal hover:text-accent-coral">Voltar ao Início</a></p>
+  </div>
+</footer>
+
+
+<div id="preloader" class="fixed inset-0 bg-primary-dark z-[9999] flex items-center justify-center">
+    <div class="loader">
+        <div class="dot-pulse"></div>
+        <p class="mt-8 text-text-light">Carregando experiência...</p>
+    </div>
+</div>
+
+<div id="notification-container" class="fixed top-4 right-4 z-[1000] space-y-2"></div>
 
 </body>
+
+<script type="module" src="js/script.js"></script>
 </html>

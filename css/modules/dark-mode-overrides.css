@@ -1,0 +1,139 @@
+/* Dark Mode Overrides for Tailwind Classes */
+
+[data-theme="dark"] {
+    /* Ensure all text is visible */
+    * {
+        color: inherit !important;
+    }
+    
+    /* Specific text color fixes */
+    .text-gray-500 {
+        color: var(--color-gray-600) !important;
+    }
+    
+    .text-gray-900 {
+        color: var(--color-text-main) !important;
+    }
+    
+    /* Background fixes */
+    .bg-opacity-80 {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+    
+    /* Button fixes */
+    button:not(.bg-accent-teal):not(.bg-transparent) {
+        background-color: var(--color-card-bg) !important;
+        color: var(--color-text-main) !important;
+        border-color: var(--color-gray-200) !important;
+    }
+    
+    /* Link colors */
+    a:not(.text-accent-teal):not(.text-accent-coral) {
+        color: var(--color-text-main) !important;
+    }
+    
+    a:hover:not(.text-accent-teal):not(.text-accent-coral) {
+        color: var(--color-accent-teal) !important;
+    }
+    
+    /* List items */
+    li {
+        color: var(--color-text-main) !important;
+    }
+    
+    /* Video backgrounds - ensure contrast */
+    video {
+        filter: brightness(0.9) contrast(1.1);
+    }
+    
+    /* Section backgrounds */
+    section:not(.hero-bg) {
+        background-color: var(--color-secondary) !important;
+    }
+    
+    /* Card content */
+    .project-card p,
+    .project-card h3 {
+        color: var(--color-text-main) !important;
+    }
+    
+    /* Skills section */
+    .bg-white p {
+        color: var(--color-text-main) !important;
+    }
+    
+    /* Form labels */
+    label {
+        color: var(--color-text-main) !important;
+    }
+    
+    /* Placeholder text */
+    ::placeholder {
+        color: var(--color-gray-600) !important;
+    }
+    
+    /* Selection color */
+    ::selection {
+        background-color: var(--color-accent-teal) !important;
+        color: var(--color-primary) !important;
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar-track {
+        background: var(--color-secondary) !important;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-accent-teal) !important;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-accent-coral) !important;
+    }
+}
+
+/* Smooth theme transitions */
+.theme-transition * {
+    transition: background-color 0.5s ease,
+                color 0.5s ease,
+                border-color 0.5s ease,
+                fill 0.5s ease,
+                stroke 0.5s ease !important;
+}
+
+/* Force dark mode background on specific sections */
+[data-theme="dark"] section.bg-gray-200 {
+    background-color: var(--color-gray-200) !important;
+}
+
+[data-theme="dark"] section.bg-secondary-light {
+    background-color: var(--color-secondary) !important;
+}
+
+[data-theme="dark"] section.bg-primary-dark {
+    background-color: var(--color-primary) !important;
+    color: var(--color-text-light) !important;
+}
+
+/* Ensure contrast in hero section */
+[data-theme="dark"] .hero-bg * {
+    color: var(--color-text-light) !important;
+}
+
+[data-theme="dark"] .hero-bg .text-accent-teal {
+    color: var(--color-accent-teal) !important;
+}
+
+[data-theme="dark"] .hero-bg .text-accent-coral {
+    color: var(--color-accent-coral) !important;
+}
+
+/* Fix for badges that might be hard to read */
+[data-theme="dark"] .rounded-full {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ensure images maintain proper contrast */
+[data-theme="dark"] img {
+    filter: brightness(0.95);
+}
